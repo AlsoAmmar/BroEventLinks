@@ -58,75 +58,36 @@
 }
 
 :root {
-  --loader-size: 50px;
-  --dot-size: 5px;
-  --dot-color: #0078d4; /* Windows Blue */
+  --ring-size: 50px;
+  --ring-thickness: 4px;
+  --ring-color: #0078d4;
 }
 
-.win11-loader {
-  position: relative;
-  width: var(--loader-size);
-  height: var(--loader-size);
-}
-
-.dot {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  transform: rotate(225deg);
-  animation: orbit 5.5s infinite;
-}
-
-.dot::after {
-  content: "";
-  position: absolute;
-  width: var(--dot-size);
-  height: var(--dot-size);
+.win11-ring {
+  width: var(--ring-size);
+  height: var(--ring-size);
   border-radius: 50%;
-  background: var(--dot-color);
+  /* We create the ring using a border on three sides or a mask */
+  border: var(--ring-thickness) solid transparent;
+  border-top-color: var(--ring-color);
+  
+  /* The magic: organic-feeling rotation */
+  animation: win11-spin 1.5s cubic-bezier(0.5, 0, 0.5, 1) infinite;
 }
 
-/* Staggered Delays for the "Chasing" effect */
-.dot:nth-child(1) { animation-delay: 1.16s; }
-.dot:nth-child(2) { animation-delay: 0.23s; }
-.dot:nth-child(3) { animation-delay: 0.46s; }
-.dot:nth-child(4) { animation-delay: 0.69s; }
-.dot:nth-child(5) { animation-delay: 0.92s; }
-
-@keyframes orbit {
+@keyframes win11-spin {
   0% {
-    transform: rotate(225deg);
-    opacity: 1;
-    animation-timing-function: ease-out;
+    transform: rotate(0deg);
+    /* In WPF terms: adjusting the 'StrokeDashArray' */
+    border-left-color: transparent;
   }
-  7% {
-    transform: rotate(345deg);
-    animation-timing-function: linear;
-  }
-  30% {
-    transform: rotate(455deg);
-    animation-timing-function: ease-in-out;
-  }
-  39% {
-    transform: rotate(690deg);
-    animation-timing-function: linear;
-  }
-  70% {
-    transform: rotate(815deg);
-    opacity: 1;
-    animation-timing-function: ease-out;
-  }
-  75% {
-    transform: rotate(945deg);
-    animation-timing-function: ease-out;
-  }
-  76% {
-    transform: rotate(945deg);
-    opacity: 0;
+  50% {
+    /* At the midpoint, we reveal more of the border to "stretch" it */
+    border-left-color: var(--ring-color);
+    border-right-color: transparent;
   }
   100% {
-    transform: rotate(945deg);
-    opacity: 0;
+    transform: rotate(360deg);
+    border-left-color: transparent;
   }
-                    }
+}
