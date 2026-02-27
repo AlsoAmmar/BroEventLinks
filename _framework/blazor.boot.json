@@ -1,11 +1,11 @@
 {
   "mainAssemblyName": "BroEventLinks.Browser",
   "resources": {
-    "hash": "sha256-/JWslEimX0d9d4QWuu+4KoJJHIgoH8oPq8pgeRyquvA=",
+    "hash": "sha256-XDdzOozBw/i6naRGqjsTxmLdCqy+nVvhFtA5tT05Vlk=",
     "fingerprinting": {
       "Avalonia.Base.imgr4ewfah.wasm": "Avalonia.Base.wasm",
       "Avalonia.Browser.ag1wpi6rwm.wasm": "Avalonia.Browser.wasm",
-      "Avalonia.Controls.tq5y282m5s.wasm": "Avalonia.Controls.wasm",
+      "Avalonia.Controls.ziutjnakdq.wasm": "Avalonia.Controls.wasm",
       "Avalonia.Dialogs.0jeb5ffti6.wasm": "Avalonia.Dialogs.wasm",
       "Avalonia.Fonts.Inter.ugjc3cxuy1.wasm": "Avalonia.Fonts.Inter.wasm",
       "Avalonia.Markup.h60kucd8vs.wasm": "Avalonia.Markup.wasm",
@@ -16,7 +16,7 @@
       "Avalonia.Themes.Fluent.1wh1oapmq1.wasm": "Avalonia.Themes.Fluent.wasm",
       "Avalonia.Vulkan.rpnvaaw06e.wasm": "Avalonia.Vulkan.wasm",
       "BroEventLinks.Browser.08yk3bzk38.wasm": "BroEventLinks.Browser.wasm",
-      "BroEventLinks.iur4njh8n0.wasm": "BroEventLinks.wasm",
+      "BroEventLinks.5onzr31p2c.wasm": "BroEventLinks.wasm",
       "CommunityToolkit.Mvvm.pz5xo5hp6j.wasm": "CommunityToolkit.Mvvm.wasm",
       "HarfBuzzSharp.d7wr2jldhh.wasm": "HarfBuzzSharp.wasm",
       "SkiaSharp.3kmg9zonn2.wasm": "SkiaSharp.wasm",
@@ -65,7 +65,7 @@
     "assembly": {
       "Avalonia.Base.imgr4ewfah.wasm": "sha256-6sjUdzortWIxLcGX+6NJJbULxkHH9tzofH/CUQf/BuQ=",
       "Avalonia.Browser.ag1wpi6rwm.wasm": "sha256-ps+VofU5g57iIrZeksYzUOsLxRdUtUEKnxWSO7bT758=",
-      "Avalonia.Controls.tq5y282m5s.wasm": "sha256-lVNdZkxp3rBSAT0b9n88iiUkzKLDpIGuRawJgE2Qr6c=",
+      "Avalonia.Controls.ziutjnakdq.wasm": "sha256-NXEm1tKftZHyVPi/v9C2qQ5y4qWxmbcjIjsnguxbAR0=",
       "Avalonia.Dialogs.0jeb5ffti6.wasm": "sha256-tPAO7uMky7zcyDOuxI+zl6PNLdZcZpm62uYsjfprXUo=",
       "Avalonia.Fonts.Inter.ugjc3cxuy1.wasm": "sha256-cu/3IV84lM2+INIh5RAhNchT0QjpDPpY7fJf1FPTPvE=",
       "Avalonia.Markup.h60kucd8vs.wasm": "sha256-F2R8MBZj8hCfijiAxblIyjcDT9lE1apCtpJjuSWu8hc=",
@@ -76,7 +76,7 @@
       "Avalonia.Themes.Fluent.1wh1oapmq1.wasm": "sha256-L18NdHohAvXaQ468TAxByN7KtS6n+O4il7eqIno2YiA=",
       "Avalonia.Vulkan.rpnvaaw06e.wasm": "sha256-McQO6jJpoXrMX2vITsTQHgE3MJrtLvr+yn48M4yVDZY=",
       "BroEventLinks.Browser.08yk3bzk38.wasm": "sha256-wPa/csIiRrPyrUs81QuVa2miy4nPS5Zr1qSPyPYJkMk=",
-      "BroEventLinks.iur4njh8n0.wasm": "sha256-Bud7nNAcaIqNHgdDJr59OlSw3pAoX9G9Z6pIVIeY1jA=",
+      "BroEventLinks.5onzr31p2c.wasm": "sha256-a2YNQ9k0vO/9qRV9cd89Hgs5VzbfZQbkTwH/WAQ+ddc=",
       "CommunityToolkit.Mvvm.pz5xo5hp6j.wasm": "sha256-a8cFCU1J81WB/WWXcm+Jm1QOTkMEnEGy4aUc32ftUg0=",
       "HarfBuzzSharp.d7wr2jldhh.wasm": "sha256-Nyakvcu3/FLKH9yDx0Qf/zqKdWIw0/PZA6d6HcuEwDM=",
       "SkiaSharp.3kmg9zonn2.wasm": "sha256-zdRIW+55U5/Chf/VdoboQBduy04Y+GABFnt6oeWTuYA=",
