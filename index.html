@@ -5,18 +5,110 @@
     <title>Bro Event Links</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./app.css" />
-    <link rel="icon" href="favicon.ico"/>
+    <link rel="icon" href="favicon.ico" />
+    <style>
+        :root {
+            --win-blue: #0078d4;
+            --ring-size: 50px;
+        }
+
+        /* HTML styles for the splash screen */
+        .avalonia-splash {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            font-family: 'Outfit', sans-serif;
+            display: flex;
+            /* FIX: Stacks items vertically like a WPF StackPanel */
+            flex-direction: column; 
+            justify-content: center;
+            align-items: center;
+            gap: 30px; /* Space between logo and spinner */
+            pointer-events: none;
+            transition: opacity 200ms ease-in-out;
+        }
+
+        /* Light theme styles */
+        @media (prefers-color-scheme: light) {
+            .avalonia-splash {
+                background: #f3f3f3; /* Standard Windows Light background */
+            }
+            .ring-track {
+                stroke: rgba(0, 0, 0, 0.05);
+            }
+        }
+
+        /* Dark theme styles */
+        @media (prefers-color-scheme: dark) {
+            .avalonia-splash {
+                background: #222f51;
+            }
+            .ring-track {
+                stroke: rgba(255, 255, 255, 0.1);
+            }
+        }
+
+        .avalonia-splash.splash-close {
+            opacity: 0;
+            display: none;
+        }
+
+        /* Windows 11 Fluent Ring Styles */
+        .win11-loader {
+            width: var(--ring-size);
+            height: var(--ring-size);
+            /* Constant rotation of the entire coordinate system */
+            animation: rotate-ring 2s linear infinite;
+            transform-origin: center;
+        }
+
+        .ring-track {
+            fill: none;
+            stroke-width: 4;
+        }
+
+        .ring-progress {
+            fill: none;
+            stroke: var(--win-blue);
+            stroke-width: 4;
+            stroke-linecap: round; /* The rounded 'Fluent' ends */
+            /* The 'stretching' effect */
+            animation: stretch-ring 1.5s ease-in-out infinite;
+        }
+
+        @keyframes rotate-ring {
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes stretch-ring {
+            0% {
+                stroke-dasharray: 1, 150;
+                stroke-dashoffset: 0;
+            }
+            50% {
+                stroke-dasharray: 90, 150;
+                stroke-dashoffset: -35;
+            }
+            100% {
+                stroke-dasharray: 90, 150;
+                stroke-dashoffset: -124;
+            }
+        }
+    </style>
 </head>
 
 <body style="margin: 0; overflow: hidden">
-<div id="out">
-    <div class="avalonia-splash">
-        <img src="Bro%20Event%20Logo%202.jpg" width="300"/>
-        <div class="win11-ring"></div>
+    <div id="out">
+        <div class="avalonia-splash">
+            <img src="Bro%20Event%20Logo%202.jpg" width="300" alt="Logo" />
+            
+            <svg class="win11-loader" viewBox="0 0 50 50">
+                <circle class="ring-track" cx="25" cy="25" r="20"></circle>
+                <circle class="ring-progress" cx="25" cy="25" r="20"></circle>
+            </svg>
+        </div>
     </div>
-</div>
-<script type='module' src="./main.js"></script>
+    <script type='module' src="./main.js"></script>
 </body>
 
 </html>
