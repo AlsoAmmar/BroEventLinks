@@ -56,38 +56,3 @@
     display: none;
     opacity: 0;
 }
-
-:root {
-  --ring-size: 50px;
-  --ring-thickness: 4px;
-  --ring-color: #0078d4;
-}
-
-.win11-ring {
-  width: var(--ring-size);
-  height: var(--ring-size);
-  border-radius: 50%;
-  /* We create the ring using a border on three sides or a mask */
-  border: var(--ring-thickness) solid transparent;
-  border-top-color: var(--ring-color);
-  
-  /* The magic: organic-feeling rotation */
-  animation: win11-spin 1.5s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-}
-
-@keyframes win11-spin {
-  0% {
-    transform: rotate(0deg);
-    /* In WPF terms: adjusting the 'StrokeDashArray' */
-    border-left-color: transparent;
-  }
-  50% {
-    /* At the midpoint, we reveal more of the border to "stretch" it */
-    border-left-color: var(--ring-color);
-    border-right-color: transparent;
-  }
-  100% {
-    transform: rotate(360deg);
-    border-left-color: transparent;
-  }
-}
