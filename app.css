@@ -1,58 +1,89 @@
-﻿/* HTML styles for the splash screen */
+:root {
+    --win-blue: #0078d4;
+    --ring-size: 50px;
+}
+
+/* Splash Screen Container */
 .avalonia-splash {
     position: absolute;
     height: 100%;
     width: 100%;
-    background: white;
     font-family: 'Outfit', sans-serif;
+    display: flex;
+    /* Stacks items vertically like a WPF StackPanel */
+    flex-direction: column; 
     justify-content: center;
     align-items: center;
-    display: flex;
+    gap: 30px; /* Space between logo and spinner */
     pointer-events: none;
+    transition: opacity 200ms ease-in-out;
 }
 
 /* Light theme styles */
 @media (prefers-color-scheme: light) {
     .avalonia-splash {
-        background: #222f51;
+        background: #f3f3f3;
     }
-
-    .avalonia-splash h2 {
-        color: #222f51;
-    }
-
-    .avalonia-splash a {
-        color: #0D6EFD;
+    .ring-track {
+        stroke: rgba(0, 0, 0, 0.05);
     }
 }
 
+/* Dark theme styles */
 @media (prefers-color-scheme: dark) {
     .avalonia-splash {
         background: #222f51;
     }
-
-    .avalonia-splash h2 {
-        color: white;
-    }
-
-    .avalonia-splash a {
-        color: white;
+    .ring-track {
+        stroke: rgba(255, 255, 255, 0.1);
     }
 }
 
-.avalonia-splash h2 {
-    font-weight: 400;
-    font-size: 1.5rem;
-}
-
-.avalonia-splash a {
-    text-decoration: none;
-    font-size: 2.5rem;
-    display: block;   
-}
-
+/* Logic for closing the splash screen */
 .avalonia-splash.splash-close {
-    transition: opacity 200ms, display 200ms;
-    display: none;
     opacity: 0;
+    display: none;
+}
+
+/* --- Windows 11 Fluent Ring Animation --- */
+
+.win11-loader {
+    width: var(--ring-size);
+    height: var(--ring-size);
+    animation: rotate-ring 2s linear infinite;
+    transform-origin: center;
+}
+
+.ring-track {
+    fill: none;
+    stroke-width: 4;
+}
+
+.ring-progress {
+    fill: none;
+    stroke: var(--win-blue);
+    stroke-width: 4;
+    stroke-linecap: round; /* Rounded ends typical of Win11 */
+    animation: stretch-ring 1.5s ease-in-out infinite;
+}
+
+/* Rotates the entire SVG */
+@keyframes rotate-ring {
+    100% { transform: rotate(360deg); }
+}
+
+/* Animates the 'dash' length (like WPF StrokeDashArray) */
+@keyframes stretch-ring {
+    0% {
+        stroke-dasharray: 1, 150;
+        stroke-dashoffset: 0;
+    }
+    50% {
+        stroke-dasharray: 90, 150;
+        stroke-dashoffset: -35;
+    }
+    100% {
+        stroke-dasharray: 90, 150;
+        stroke-dashoffset: -124;
+    }
 }
