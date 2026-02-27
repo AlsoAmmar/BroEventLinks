@@ -12,47 +12,6 @@
             --ring-size: 50px;
         }
 
-        /* HTML styles for the splash screen */
-        .avalonia-splash {
-            position: absolute;
-            height: 100%;
-            width: 100%;
-            font-family: 'Outfit', sans-serif;
-            display: flex;
-            /* FIX: Stacks items vertically like a WPF StackPanel */
-            flex-direction: column; 
-            justify-content: center;
-            align-items: center;
-            gap: 30px; /* Space between logo and spinner */
-            pointer-events: none;
-            transition: opacity 200ms ease-in-out;
-        }
-
-        /* Light theme styles */
-        @media (prefers-color-scheme: light) {
-            .avalonia-splash {
-                background: #f3f3f3; /* Standard Windows Light background */
-            }
-            .ring-track {
-                stroke: rgba(0, 0, 0, 0.05);
-            }
-        }
-
-        /* Dark theme styles */
-        @media (prefers-color-scheme: dark) {
-            .avalonia-splash {
-                background: #222f51;
-            }
-            .ring-track {
-                stroke: rgba(255, 255, 255, 0.1);
-            }
-        }
-
-        .avalonia-splash.splash-close {
-            opacity: 0;
-            display: none;
-        }
-
         /* Windows 11 Fluent Ring Styles */
         .win11-loader {
             width: var(--ring-size);
