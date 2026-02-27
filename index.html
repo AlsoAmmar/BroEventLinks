@@ -1,61 +1,12 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
     <title>Bro Event Links</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="favicon.ico" />
-    <style>
-        :root {
-            --win-blue: #0078d4;
-            --ring-size: 50px;
-        }
-
-        /* Windows 11 Fluent Ring Styles */
-        .win11-loader {
-            width: var(--ring-size);
-            height: var(--ring-size);
-            /* Constant rotation of the entire coordinate system */
-            animation: rotate-ring 2s linear infinite;
-            transform-origin: center;
-        }
-
-        .ring-track {
-            fill: none;
-            stroke-width: 4;
-        }
-
-        .ring-progress {
-            fill: none;
-            stroke: var(--win-blue);
-            stroke-width: 4;
-            stroke-linecap: round; /* The rounded 'Fluent' ends */
-            /* The 'stretching' effect */
-            animation: stretch-ring 1.5s ease-in-out infinite;
-        }
-
-        @keyframes rotate-ring {
-            100% { transform: rotate(360deg); }
-        }
-
-        @keyframes stretch-ring {
-            0% {
-                stroke-dasharray: 1, 150;
-                stroke-dashoffset: 0;
-            }
-            50% {
-                stroke-dasharray: 90, 150;
-                stroke-dashoffset: -35;
-            }
-            100% {
-                stroke-dasharray: 90, 150;
-                stroke-dashoffset: -124;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="./app.css" />
+    <link rel="icon" href="favicon.ico"/>
 </head>
-
 <body style="margin: 0; overflow: hidden">
     <div id="out">
         <div class="avalonia-splash">
@@ -69,5 +20,4 @@
     </div>
     <script type='module' src="./main.js"></script>
 </body>
-
 </html>
